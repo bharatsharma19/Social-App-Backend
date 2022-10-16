@@ -1,25 +1,24 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
       require: true,
       min: 3,
-      max: 24,
+      max: 20,
       unique: true,
     },
     email: {
       type: String,
-      require: true,
-      max: 64,
+      required: true,
+      max: 50,
       unique: true,
     },
     password: {
       type: String,
-      require: true,
+      required: true,
       min: 6,
-      max: 64,
     },
     profilePicture: {
       type: String,
@@ -33,7 +32,7 @@ const userSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
-    following: {
+    followings: {
       type: Array,
       default: [],
     },
@@ -43,15 +42,15 @@ const userSchema = new mongoose.Schema(
     },
     desc: {
       type: String,
-      max: 64,
+      max: 50,
     },
     city: {
       type: String,
-      max: 64,
+      max: 50,
     },
     from: {
       type: String,
-      max: 64,
+      max: 50,
     },
     relationship: {
       type: Number,
@@ -61,4 +60,4 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("User", UserSchema);

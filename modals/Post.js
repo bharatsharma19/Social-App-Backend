@@ -4,11 +4,11 @@ const PostSchema = new mongoose.Schema(
   {
     userId: {
       type: String,
-      require: true,
+      required: true,
     },
     desc: {
       type: String,
-      max: 512,
+      max: 500,
     },
     img: {
       type: String,
